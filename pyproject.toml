@@ -1,13 +1,15 @@
 [project]
 name = "sqlalchemy-storage"
 version = "0.1.0"
-description = "Add your description here"
+description = "SQLAlchemy support for storage file"
 readme = "README.md"
 authors = [
     { name = "Muhammad Daffa Dinaya", email = "muhammaddaffadinaya@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "aioboto3>=14.3.0",
+]
 
 [build-system]
 requires = ["hatchling"]
