@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:15.5
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=apipodlabs
+      - POSTGRES_PASSWORD=apipodlabs
+      - POSTGRES_DB=storage_test
+
+  storage:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    volumes:
+      - minio-data:/mnt/data
+    
+    environment:
+      - MINIO_ROOT_USER=apipodlabs
+      - MINIO_ROOT_PASSWORD=apipodlabs
+      - MINIO_VOLUMES="/mnt/data"
+    
+    command: [
+      "minio",
+      "server",
+      "--console-address",
+      ":9001",
+    ]
+
+volumes:
+  minio-data:
