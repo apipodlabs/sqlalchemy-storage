@@ -10,8 +10,8 @@ try:
 except ImportError:  # pragma: no cover
     PIL = False
 
-from sqlalchemy_storage.base import BaseStorage, StorageFile, StorageImage
-from sqlalchemy_storage.exceptions import ValidationException
+from sqlalchemy_storages.base import BaseStorage, StorageFile, StorageImage
+from sqlalchemy_storages.exceptions import ValidationException
 
 
 class FileType(TypeDecorator):
@@ -20,8 +20,8 @@ class FileType(TypeDecorator):
 
     ???+ usage
         ```python
-        from sqlalchemy_storage import FileSystemStorage
-        from sqlalchemy_storage.integrations.sqlalchemy import FileType
+        from sqlalchemy_storages import FileSystemStorage
+        from sqlalchemy_storages.integrations.sqlalchemy import FileType
 
         class Example(Base):
             __tablename__ = "example"
@@ -66,8 +66,8 @@ class ImageType(TypeDecorator):
 
     ???+ usage
         ```python
-        from sqlalchemy_storage import FileSystemStorage
-        from sqlalchemy_storage.integrations.sqlalchemy import ImageType
+        from sqlalchemy_storages import FileSystemStorage
+        from sqlalchemy_storages.integrations.sqlalchemy import ImageType
 
         class Example(Base):
             __tablename__ = "example"

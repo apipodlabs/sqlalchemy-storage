@@ -6,7 +6,7 @@ import pytest
 from botocore.exceptions import ClientError
 from moto import mock_s3
 
-from sqlalchemy_storage import S3Storage, StorageFile
+from sqlalchemy_storages import S3Storage, StorageFile
 
 os.environ["MOTO_S3_CUSTOM_ENDPOINTS"] = "http://custom.s3.endpoint"
 
